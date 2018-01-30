@@ -9,8 +9,9 @@ let messageContainer = document.getElementById('messages');
 
 sendMessageForm.addEventListener('submit', (event) => {
 	event.preventDefault();
+	console.log('clicked')
 	let message = messageInput.value;
-	socket.emit('send-message', {message});
+	socket.emit('send-message', {message: message});
 });
 
 socket.on('receive-message', (data) => {
@@ -26,5 +27,6 @@ let usernameInput = document.getElementById('username-input');
 setUsernameForm.addEventListener('submit', (event) => {
 	event.preventDefault();
 	let username = usernameInput.value;
-	socket.emit('set-username', { username });
+	console.log('New username', username)
+	socket.emit('set-username', { username: username });
 });

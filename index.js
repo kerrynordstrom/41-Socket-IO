@@ -3,7 +3,7 @@
 const express = require('express');
 const app = express();
 const http = require('http').Server(app);
-let io = require('socket.io')(http);
+const io = require('socket.io')(http);
 
 app.use(express.static('./public'));
 
@@ -26,14 +26,13 @@ io.on('connection', (socket) => {
 		console.log('MESSAGE:', data.message);
 		io.emit('receive-message', data);
 	});
-
+	
 	socket.on('set-username', (data) => {
 		USERS[socket.id].username = data.username;
-	})
-
+	})	
 });
 
-	let PORT = 3000;
-	http.listen(PORT, () => {
-		console.log('http://localhost:' + PORT);
+	let port = 3000;
+	http.listen(port, () => {
+		console.log('http://localhost:' + port);
 	});
