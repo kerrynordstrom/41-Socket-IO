@@ -21,9 +21,8 @@ io.on('connection', (socket) => {
 	
 	socket.on('send-message', (data) => {
 		data.username = USERS[socket.id].username
-		data.timestamp = new Date();
+		data.timestamp = new Date().toLocaleTimeString();
 
-		console.log('MESSAGE:', data.message);
 		io.emit('receive-message', data);
 	});
 	

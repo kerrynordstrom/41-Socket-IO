@@ -6,7 +6,6 @@ class ChatMessage {
 	}
 
 	render(parentElement) {
-		console.log('BEGIN RENDERING???');
 		let container = document.createElement('div')
 		let username = document.createElement('span')
 		let timestamp = document.createElement('span')
@@ -16,15 +15,14 @@ class ChatMessage {
 		username.classList.add('username');
 		timestamp.classList.add('timestamp');
 
-		timestamp.textContent = this.timestamp
-		username.textContent = this.username
+		timestamp.textContent = this.timestamp + ' || '
+		username.textContent = this.username + ': '
 		message.textContent = this.message
 
 		container.appendChild(timestamp);
 		container.appendChild(username);
 		container.appendChild(message);
 
-		console.log('RENDERING???');
-		parentElement.appendChild(div)
+		parentElement.appendChild(container)
 	}
 }

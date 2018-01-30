@@ -4,23 +4,23 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/styles.css">
-	<title>Zoooomchat</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
+	<title>Web 1.0 ChitChat</title>
 </head>
 <body>
-	<h1>No Inner HTML Here</h1>
-	<p>Shoot me a message below.</p>
-
-	 <form id="send-username-form">
-	<input id="username-input" />
-	<button type="submit">Who you!?</button>
-	</form>
+	<h1>Sell your warez.</h1>
+		<form id="send-username-form">
+	 <input id="username-input" />
+	 <button type="submit">Who you!?</button>
+	 </form>
+	<div id="messages"></div>
+	
 
 	<form id="send-message-form">
-		<input id="message-input" />
+		<input id="message-input" size=82/>
 		<button type="submit">Shoot!</button>
 	</form>
 
-	<div id="messages"></div>
 </body>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/models/chat-message.js"></script>
